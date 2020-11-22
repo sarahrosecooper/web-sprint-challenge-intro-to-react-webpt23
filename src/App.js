@@ -14,6 +14,11 @@ const TestContainer = styled.div`
   text-align: center;
 `;
 
+const H1Div = styled.div`
+background-image: url("https://www.impericon.com/media/impericon/header/entertainment/rick_and_morty/20190325_rick_desktop.jpg");
+min-height: 200px;
+`;
+
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
@@ -35,11 +40,16 @@ const App = () => {
   console.log(characters);
 
   return (
+    <div>
+      <H1Div>
+        Hello
+        </H1Div>
     <TestContainer>
       {characters.map((character) => {
         return <Character key={character.id} character={character} />;
       })}
     </TestContainer>
+    </div>
   );
 };
 
