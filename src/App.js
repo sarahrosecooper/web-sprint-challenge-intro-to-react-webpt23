@@ -4,7 +4,9 @@ import axios from "axios";
 import styled from "styled-components";
 import Character from "./components/Character";
 
-const TestContainer = styled.div`
+// --------------- STYLED COMPONENTS ------------------
+
+const MainContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -15,18 +17,12 @@ const TestContainer = styled.div`
 `;
 
 const H1Div = styled.div`
-background-image: url("https://www.impericon.com/media/impericon/header/entertainment/rick_and_morty/20190325_rick_desktop.jpg");
-min-height: 200px;
+  background-image: url("https://www.impericon.com/media/impericon/header/entertainment/rick_and_morty/20190325_rick_desktop.jpg");
+  min-height: 200px;
 `;
 
 const App = () => {
-  // Try to think through what state you'll need for this app before starting. Then build out
-  // the state properties here.
   const [characters, setCharacters] = useState([]);
-
-  // Fetch characters from the API in an effect hook. Remember, anytime you have a
-  // side effect in a component, you want to think about which state and/or props it should
-  // sync up with, if any.
 
   useEffect(() => {
     axios
@@ -41,14 +37,12 @@ const App = () => {
 
   return (
     <div>
-      <H1Div>
-        Hello
-        </H1Div>
-    <TestContainer>
-      {characters.map((character) => {
-        return <Character key={character.id} character={character} />;
-      })}
-    </TestContainer>
+      <H1Div></H1Div>
+      <MainContainer>
+        {characters.map((character) => {
+          return <Character key={character.id} character={character} />;
+        })}
+      </MainContainer>
     </div>
   );
 };
