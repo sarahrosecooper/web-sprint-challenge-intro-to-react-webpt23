@@ -4,6 +4,16 @@ import axios from "axios";
 import styled from "styled-components";
 import Character from "./components/Character";
 
+const TestContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-transform: lowercase;
+  background-image: url("https://image.freepik.com/free-vector/space-background-with-abstract-shape-stars_189033-30.jpg");
+  color: white;
+  text-align: center;
+`;
+
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
@@ -25,11 +35,11 @@ const App = () => {
   console.log(characters);
 
   return (
-    <div className="App">
+    <TestContainer>
       {characters.map((character) => {
         return <Character key={character.id} character={character} />;
       })}
-    </div>
+    </TestContainer>
   );
 };
 
